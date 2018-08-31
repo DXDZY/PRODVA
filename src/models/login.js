@@ -46,11 +46,12 @@ export default {
       yield put({
         type: 'changeLoginStatus',
         payload: {
-          status: false,
-          currentAuthority: 'guest',
+          // status: false,
+          // currentAuthority: 'guest',
+          code:'10000',
         },
       });
-      reloadAuthorized();
+      // reloadAuthorized();
       yield put(
         routerRedux.push({
           pathname: '/user/login',

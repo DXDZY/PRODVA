@@ -52,8 +52,7 @@ export default class LoginPage extends Component {
       <div className={styles.main}>
         <Login defaultActiveKey={type} onTabChange={this.onTabChange} onSubmit={this.handleSubmit}>
           <Tab key="account" tab="账户密码登录">
-            {login.code !== '10000' && login.code !== undefined &&
-              // login.type === 'account' &&
+            {login.code !== '10000'&&
               !submitting &&
               this.renderMessage(login.msg)}
             <UserName name="account" placeholder="admin/user" />
