@@ -26,4 +26,11 @@ export default {
   disableDynamicImport: true,
   publicPath: '/',
   hash: true,
+  // "proxy": {
+  //   "/pandora": {
+  //     "target": "http://api.ceshi.qichejianli.com/",
+  //     "changeOrigin": true,
+  //     // "pathRewrite": { "^/pandora" : "" }
+  //   }
+  // }
 };

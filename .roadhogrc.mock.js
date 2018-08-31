@@ -71,7 +71,7 @@ const proxy = {
   'GET /api/fake_chart_data': getFakeChartData,
   'GET /api/profile/basic': getProfileBasicData,
   'GET /api/profile/advanced': getProfileAdvancedData,
-  'POST /api/login/account': (req, res) => {
+  'POST /pandora/adminUser/login': (req, res) => {
     const { password, account, type } = req.body;
     if (password === '888888' && account === 'admin') {
       res.send({
@@ -137,4 +137,9 @@ const proxy = {
   },
 };
 
-export default (noProxy ? {} : delay(proxy, 1000));
+export default (noProxy ? {
+  'POST /pandora/(.*)': 'http://api.ceshi.qichejianli.com/pandora/',
+  'GET /pandora/(.*)': 'http://api.ceshi.qichejianli.com/pandora/',
+  // 'POST /pandora/(.*)': 'http://192.168.84.50:3000/pandora/',
+  // 'POST /pandora/(.*)': 'http://192.168.82.13/pandora/',
+} : delay(proxy, 1000));

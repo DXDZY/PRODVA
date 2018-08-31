@@ -1,7 +1,13 @@
-# 本地起服务
+# 不适用代理服务器 请求mock数据
 ```
 npm run start
 ```
+
+# 使用代理服务器 请求服务器数据
+```
+npm run start:no-proxy
+```
+
 
 # 构建
 ```
