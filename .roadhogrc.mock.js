@@ -6,6 +6,7 @@ import { getProfileBasicData } from './mock/profile';
 import { getProfileAdvancedData } from './mock/profile';
 import { getNotices } from './mock/notices';
 import { format, delay } from 'roadhog-api-doc';
+import { loginData } from './mock/login';
 
 // 是否禁用代理
 const noProxy = process.env.NO_PROXY === 'true';
@@ -71,7 +72,7 @@ const proxy = {
   'GET /api/fake_chart_data': getFakeChartData,
   'GET /api/profile/basic': getProfileBasicData,
   'GET /api/profile/advanced': getProfileAdvancedData,
-  'POST /pandora/adminUser/login': (req, res) => {
+  'POST /api/adminUser/login': (req, res) => {
     const { password, account, type } = req.body;
     if (password === '888888' && account === 'admin') {
       res.send({
@@ -135,6 +136,7 @@ const proxy = {
       path: '/base/category/list',
     });
   },
+  'POST /pandora/adminUser/login':loginData,
 };
 
 export default (noProxy ? {

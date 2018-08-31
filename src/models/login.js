@@ -10,6 +10,8 @@ export default {
 
   state: {
     status: undefined,
+    code:'10000',
+    msg:'',
   },
 
   effects: {
@@ -20,7 +22,7 @@ export default {
         payload: response,
       });
       // Login successfully
-      if (response.status === 'ok') {
+      if (response.code === '10000') {
         // reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
@@ -65,8 +67,8 @@ export default {
       // setAuthority(payload.currentAuthority);
       return {
         ...state,
-        status: payload.status,
-        type: payload.type,
+        code: payload.code,
+        msg: payload.msg,
       };
     },
   },
