@@ -7,12 +7,12 @@ const menuData = [
     path: 'dashboard',
     children: [
       {
-        name: '分析页',
-        path: 'analysis',
-      },
-      {
         name: '监控页',
         path: 'monitor',
+      },
+      {
+        name: '分析页',
+        path: 'analysis',
       },
       {
         name: '工作台',

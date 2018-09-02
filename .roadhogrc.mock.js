@@ -76,8 +76,8 @@ const proxy = {
     if (password === '888888' && userName === 'admin') {
       res.send({
         status: 'ok',
-        type,
-        currentAuthority: 'admin',
+        // type,
+        // currentAuthority: 'admin',
       });
       return;
     }
