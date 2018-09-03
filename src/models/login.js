@@ -9,7 +9,7 @@ export default {
   namespace: 'login',
 
   state: {
-    status: undefined,
+    code: '',
   },
 
   effects: {
@@ -20,7 +20,7 @@ export default {
         payload: response,
       });
       // Login successfully
-      if (response.status === '1000') {
+      if (response.code === '10000') {
         reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
@@ -44,7 +44,7 @@ export default {
       yield put({
         type: 'changeLoginStatus',
         payload: {
-          status: false,
+          code: '',
           currentAuthority: 'guest',
         },
       });
@@ -65,7 +65,7 @@ export default {
       setAuthority(payload.currentAuthority);
       return {
         ...state,
-        status: payload.status,
+        code: payload.code,
         type: payload.type,
       };
     },
