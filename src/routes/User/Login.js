@@ -51,15 +51,15 @@ export default class LoginPage extends Component {
     return (
       <div className={styles.main}>
         <Login defaultActiveKey={type} onTabChange={this.onTabChange} onSubmit={this.handleSubmit}>
-          <Tab key="account" tab="账户密码登录">
+          <Tab key="account" tab="">
             {login.code !== '' &&
               login.code !== '10000' &&
               !submitting &&
-              this.renderMessage('账户或密码错误（admin/888888）')}
-            <UserName name="account" placeholder="admin/user" />
-            <Password name="password" placeholder="888888/123456" />
+              this.renderMessage('账户或密码错')}
+            <UserName name="account" placeholder="用户名" />
+            <Password name="password" placeholder="密码" />
           </Tab>
-          <Tab key="mobile" tab="手机号登录">
+          {/* <Tab key="mobile" tab="手机号登录">
             {login.status === 'error' &&
               login.type === 'mobile' &&
               !submitting &&
@@ -74,9 +74,9 @@ export default class LoginPage extends Component {
             <a style={{ float: 'right' }} href="">
               忘记密码
             </a>
-          </div>
+          </div> */}
           <Submit loading={submitting}>登录</Submit>
-          <div className={styles.other}>
+          {/* <div className={styles.other}>
             其他登录方式
             <Icon className={styles.icon} type="alipay-circle" />
             <Icon className={styles.icon} type="taobao-circle" />
@@ -84,7 +84,7 @@ export default class LoginPage extends Component {
             <Link className={styles.register} to="/user/register">
               注册账户
             </Link>
-          </div>
+          </div> */}
         </Login>
       </div>
     );
